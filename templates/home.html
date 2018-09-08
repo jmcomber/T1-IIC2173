@@ -1,0 +1,33 @@
+{{define "home"}}
+
+<!DOCTYPE html>
+
+
+
+<html>
+   <head>
+         <meta charset="UTF-8">
+         <link rel="stylesheet" type="text/css" href="/static/style.css">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+        <link rel="shortcut icon" type="image/png" href="/static/favicon.ico"/>
+         <!-- The welcome struct (shown in the main.go code) is received within the HTML and we just need to use the . operator and retrieve the information we want -->
+         <h1 class="texto">&#9820; El Comentador</h1>
+
+   </head>
+   <body>
+         <h1></h1>
+      	<form action="/main.go" method="post">
+		  <!-- Comment:<br> -->
+		  <input type="text" name="comment" placeholder="Comment"><br>
+		  <input type="submit" class="button" value="Submit">
+		</form>
+
+		<br>
+
+		<!-- Show all comments made prior -->
+
+
+   </body>
+</html>
+
+{{ end }}

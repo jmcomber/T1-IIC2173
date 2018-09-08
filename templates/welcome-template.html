@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+<html>
+   <head>
+         <meta charset="UTF-8">
+         <!-- The welcome struct (shown in the main.go code) is received within the HTML and we just need to use the . operator and retrieve the information we want -->
+         <title>Welcome </title>
+   </head>
+   <body>
+      <!-- <div class="welcome center">{{.Time}}: {{.Comment}}</div> -->
+      	{{define "comments"}}
+      	<hr>
+
+      	<br>
+
+
+
+      	<table id="comments">
+      		<tr>
+      		    <th class="texto">Comentario</th>
+      		    <th class="texto">Tiempo</th> 
+      		    <th class="texto">IP</th>
+      		</tr>
+      		{{ range $key, $value := . }}
+      		<tr>
+      		    <td class="texto">{{$value.Comment}}</td>
+      		    <td class="texto">{{$value.Time}}</td> 
+      		    <td class="texto">{{$value.IP}}</td>
+      		</tr>
+      		{{end}}
+      	</table>
+	     <footer>
+	     	<br><br><br><br><br>
+	     	<hr>
+			<p>Credits to: <a target="_blank" href="https://medium.com/@martinomburajr/building-a-go-web-app-from-scratch-to-deploying-on-google-cloud-part-3a-deploying-our-go-app-16f5a2f44634"> this post</a></p>
+			<p>Hosted with Google Compute Engine (IaaS), DB powered by PostgreSQL</p>
+			<p>@jmcomber, 2018: IIC2173</p>
+		</footer>
+		{{ end }}
+
+
+   </body>
+</html>
